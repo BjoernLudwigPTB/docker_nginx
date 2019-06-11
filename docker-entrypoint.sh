@@ -5,14 +5,14 @@ set -e
 # https://github.com/BjoernLudwigPTB/dockerfiles/blob/master/etherpad-lite/entrypoint.sh
 # to the application nginx.
 
-# Indicate if the application shall be served solely over SSL or solely not.
-# Mixed content will possibly not work correctly.
+# Indicate if the application shall be served solely over SSL or not.
+# Mixed content will possibly not work correctly if set to `false`.
 : ${SSL:=false}
 
 # The full URL over which the application will be served including subfolders
 : ${SERVER_NAME:=localhost}
 
-# The applications ip or address in the network.
+# The application's ip or address in the network.
 : ${UPSTREAM_HANDLE:=0.0.0.0}
 
 # The applications port at its address in the network.

@@ -20,12 +20,12 @@ set -e
 
 if [ "$SSL" = 'true' ]; then
   sed -i \
-      -e 's/#fastcgi_param HTTPS on;/fastcgi_param HTTPS on;/g' \
+      -e 's|#fastcgi_param HTTPS on;|fastcgi_param HTTPS on;|g' \
       /etc/nginx/conf.d/app.conf
 fi
 sed -i \
-    -e 's/server UPSTREAM_HANDLE:UPSTREAM_PORT;/server "'$UPSTREAM_HANDLE'":"'$UPSTREAM_PORT'";/g' \
-    -e 's/server_name SERVER_NAME;/server_name "'$SERVER_NAME'";/g' \
+    -e 's|server UPSTREAM_HANDLE:UPSTREAM_PORT;|server '"$UPSTREAM_HANDLE"':'"$UPSTREAM_PORT"';|g' \
+    -e 's|server_name SERVER_NAME;|server_name '"$SERVER_NAME"';|g' \
     /etc/nginx/conf.d/app.conf
 
-nginx -g daemon off;
+nginx -g 'daemon off;'

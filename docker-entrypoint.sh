@@ -24,8 +24,8 @@ if [ "$SSL" = 'true' ]; then
       /etc/nginx/conf.d/app.conf
 fi
 sed -i \
-    -e 's/server UPSTREAM_HANDLE:UPSTREAM_PORT;/server '$UPSTREAM_HANDLE':'$UPSTREAM_PORT';/g' \
-    -e 's/server_name SERVER_NAME;/server_name '$SERVER_NAME';/g' \
+    -e 's/server UPSTREAM_HANDLE:UPSTREAM_PORT;/server "'$UPSTREAM_HANDLE'":"'$UPSTREAM_PORT'";/g' \
+    -e 's/server_name SERVER_NAME;/server_name "'$SERVER_NAME'";/g' \
     /etc/nginx/conf.d/app.conf
 
 nginx -g daemon off;

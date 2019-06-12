@@ -18,7 +18,7 @@ set -e
 # The applications port at its address in the network.
 : ${UPSTREAM_PORT:=80}
 
-if [ "$SSL" == 'true' ]; then
+if [ "$SSL" = 'true' ]; then
   sed -i \
       -e 's/#fastcgi_param HTTPS on;/fastcgi_param HTTPS on;/g' \
       /etc/nginx/conf.d/app.conf

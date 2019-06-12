@@ -19,8 +19,9 @@ container startup
 
 # Environment variables
 During container start there are several optional environment variables
-available to connect to an existing app in the network and serve it at a specified address. The following list
-mentions the default values if not explicitly specified differently during container start up.
+available to connect to an existing app in the network and serve it at a
+specified address. The following list mentions the default values if not
+explicitly specified differently during container start up.
 
 ## Available environment variables
 `SSL = 'false'`: Indicate if the application shall be served solely over SSL or
@@ -31,4 +32,4 @@ mentions the default values if not explicitly specified differently during conta
 
 `UPSTREAM_HANDLE ='0.0.0.0'`: The application's ip or address in the network.
 
-`UPSTREAM_PORT = '80'`: The applications port at its address in the network.
+`UPSTREAM_PORT = '80'`: The application's port at it's address in the network.

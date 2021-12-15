@@ -5,7 +5,7 @@ This repository holds the configuration for a Docker image based on
 of all served URLs to `https://...` or just the way it is.
 
 # Build process
-The build process is comprised of few steps.
+The build process comprises few steps.
 
 ## Copy default config
 Copy [`app.conf`](./app.conf) to `/etc/nginx/conf.d/app.conf` of the image to

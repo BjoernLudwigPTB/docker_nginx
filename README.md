@@ -5,25 +5,33 @@ This repository holds the configuration for a Docker image based on
 of all served URLs to `https://...` or just the way it is.
 
 # Build process
+
 The build process comprises few steps.
 
 ## Copy default config
+
 Copy [`app.conf`](./app.conf) to `/etc/nginx/conf.d/app.conf` of the image to
 set some default settings and allow for the change via `docker-entrypoint.sh`
 which is copied during the next step.
 
+Copy [`proxy.conf`](./proxy.conf) to `/etc/nginx/conf.d/proxy.conf` of the
+image to ensure proper reverse proxy behaviour.
+
 ## Copy script to enable application set up
+
 Copy [`docker-entrypoint.sh`](./docker-entrypoint.sh) to the root directory of
 the image to enable the setup process of the connection to the application on
 container startup
 
 # Environment variables
+
 During container start there are several optional environment variables
 available to connect to an existing app in the network and serve it at a
 specified address. The following list mentions the default values if not
 explicitly specified differently during container start up.
 
 ## Available environment variables
+
 `SSL = 'false'`: Indicate if the application shall be served solely over SSL or
   not. Mixed content will possibly not work correctly if set to `'false'`.
 
